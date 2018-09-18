@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
+    <title>Job Test</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <header id="header">
+      <div class="container-fluid">
+
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li class="menu-active"><a href="/">Home</a></li>
+            <li><a href="/admin/posts/create">New post</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     {% block body %}{% endblock %}
   </body>
 </html>

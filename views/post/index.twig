@@ -1,0 +1,17 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <h1>Post list</h1>
+    
+    {% if posts is empty %}
+        <p>There's no posts yet <a href="/admin/posts/create">create one!</a> </p>
+    {% else %}
+        {% for post in posts %}
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.description }}</td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+            
+{% endblock %}

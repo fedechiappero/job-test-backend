@@ -1,0 +1,20 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <h1>New post</h1>
+
+    <form method="POST" action="/admin/posts/create">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input name="title" type="text" class="form-control" id="title">
+        </div>
+        <div class="form-group">
+            <label for="desctiption">Desctiption:</label>
+            <textarea name="description" class="form-control" rows="3" id="desctiption"></textarea>
+        </div>
+
+        {# <button type="button" class="btn btn-success">Save</button> #}
+        <button class="btn" type="submit">Save</button>
+    </form>
+
+{% endblock %}
