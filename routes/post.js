@@ -3,11 +3,20 @@ var router = express.Router();
 
 var Post = require('./../models/post');
 
+router.all('*', function(req,res,next){
+  res.set('Access-Control-Allow-Origin','*');
+  res.set('Access-Control-Allow-Methods','GET,POST');
+  res.set('Access-Control-Allow-Headers','X-Requested-With,Content-Type');
+  next();
+});
+
 /* GET post listing */
 router.get('/', function(req, res) {
-  Post.find({},function(err, allPost){ //find all
-    if(err) throw err;   
-    res.render('post/index', {posts: allPost});
+  
+  Post.find({},function(err, allPost){
+    if(err) throw res.status(500).send(err); 
+    res.status(200).send({posts: allPost}); //to angular view
+    //res.render('post/index', {posts: allPost}); //to twig view
   });
 });
 
@@ -18,16 +27,18 @@ router.get('/admin/posts/create', function(req, res) {
 
 /* POST new post */
 router.post('/admin/posts/create', function(req, res) {
+
   const data = new Post({
     description: req.body.description,
     title: req.body.title
   });
   data.save()
   .then(item => {
-    res.redirect('/');
+    //res.redirect('/'); to twig view
+    res.status(201).send({message: 'New post saved'});
   })
   .catch(err => {
-    res.status(400).send("unable to save to database");
+    res.status(500).send({message: "Unable to save to database"});
   })
 });
 

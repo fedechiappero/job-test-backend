@@ -7,8 +7,10 @@
 
 ### Extra points
 
++ APIRest
 + ORM (mongoose)
-
++ API and Client side separately
++ Framework front-end (Angular)
 
 ## Set up and run
 
