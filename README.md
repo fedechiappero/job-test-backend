@@ -1,6 +1,6 @@
 ## Test for job application
 
-Back-end made with Node.js, Front-end made with Angular.
+Back-end made with Node.js, [Front-end](https://github.com/fedechiappero/job-test-frontend) made with Angular.
 
 ### Basic functionality
 
