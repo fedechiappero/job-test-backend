@@ -1,5 +1,7 @@
 ## Test for job application
 
+Back-end made with Node.js, Front-end made with Angular.
+
 ### Basic functionality
 
 + Post insert (title + description) -> path: /admin/posts/create
